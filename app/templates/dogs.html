@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+DogDate - Dogs
+{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>{% if current_user.username==user.username %}Your dogs{% else %}{{ user.username }}'s dogs{% endif %}</h1>
+</div>
+{% if current_user.username==user.username %}
+<a class="btn btn-default" href="{{ url_for('.add_dog') }}">Add Your Dog</a>
+{% endif %}
+
+{% endblock %}
